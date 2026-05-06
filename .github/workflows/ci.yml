@@ -1,0 +1,67 @@
+name: CI - Testes Automatizados
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  api-tests:
+    name: "🔌 API Tests - Petstore"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências da API
+        working-directory: api_tests
+        run: pip install -r requirements.txt
+
+      - name: Executar testes de API
+        working-directory: api_tests
+        run: pytest
+
+      - name: Upload do relatório de API
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-api
+          path: api_tests/report.html
+
+  web-tests:
+    name: "🌐 Web Tests - SauceDemo"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Instalar dependências Web
+        working-directory: web_tests
+        run: pip install -r requirements.txt
+
+      - name: Executar testes Web
+        working-directory: web_tests
+        run: pytest
+
+      - name: Upload do relatório Web
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-web
+          path: web_tests/report.html
