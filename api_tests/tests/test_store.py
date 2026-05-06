@@ -3,12 +3,12 @@ from utils.helpers import pet_payload
 
 
 class TestStore:
-    def test_get_inventory(self, client):
+    def test_buscar_inventario(self, client):
         resp = client.get("/store/inventory")
         assert resp.status_code == 200
         assert isinstance(resp.json(), dict)
 
-    def test_create_order(self, client, created_pet):
+    def test_criar_pedido(self, client, created_pet):
         order = {
             "id": random.randint(1, 9999),
             "petId": created_pet["id"],
@@ -22,7 +22,7 @@ class TestStore:
         assert data["petId"] == created_pet["id"]
         assert data["status"] == "placed"
 
-    def test_get_order_by_id(self, client, created_pet):
+    def test_buscar_pedido_por_id(self, client, created_pet):
         order = {
             "id": random.randint(1, 9999),
             "petId": created_pet["id"],
@@ -35,7 +35,7 @@ class TestStore:
         assert resp.status_code == 200
         assert resp.json()["id"] == created["id"]
 
-    def test_delete_order(self, client, created_pet):
+    def test_deletar_pedido(self, client, created_pet):
         order = {
             "id": random.randint(1, 9999),
             "petId": created_pet["id"],
@@ -47,6 +47,6 @@ class TestStore:
         resp = client.delete(f"/store/order/{created['id']}")
         assert resp.status_code == 200
 
-    def test_get_nonexistent_order(self, client):
+    def test_buscar_pedido_inexistente(self, client):
         resp = client.get("/store/order/999999999")
         assert resp.status_code == 404
