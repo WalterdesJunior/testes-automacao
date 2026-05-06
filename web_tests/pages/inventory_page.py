@@ -1,3 +1,4 @@
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
@@ -16,6 +17,7 @@ class InventoryPage(BasePage):
         return self.get_text(self.TITLE)
 
     def add_products(self, quantity=1):
+        self.wait.until(EC.presence_of_all_elements_located(self.BTN_ADD))
         buttons = self.driver.find_elements(*self.BTN_ADD)
         for btn in buttons[:quantity]:
             btn.click()

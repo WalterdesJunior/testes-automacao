@@ -63,7 +63,7 @@ projeto-testes/
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone https://github.com/WalterdesJunior/testes-automacao.git
 cd projeto-testes
 ```
 
