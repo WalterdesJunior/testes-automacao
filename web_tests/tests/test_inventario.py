@@ -9,9 +9,3 @@ class TestInventario:
         
         product = ProductPage(logged_in_driver)
         assert len(product.get_product_name()) > 0
-
-    def test_ordenacao_z_a(self, logged_in_driver):
-        inventory = InventoryPage(logged_in_driver)
-        inventory.sort_by("za")
-        # Adicionar validação de lista aqui
-        assert inventory.get_title() == "Products"

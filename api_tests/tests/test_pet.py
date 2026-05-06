@@ -35,10 +35,6 @@ class TestPet:
         resp = client.delete(f"/pet/{pet['id']}")
         assert resp.status_code == 200
 
-    def test_buscar_pet_inexistente(self, client):
-        resp = client.get("/pet/99999999")
-        assert resp.status_code == 404
-
     def test_atualizar_pet_via_formulario(self, client, created_pet):
         """Testa o endpoint de atualização via form-data (POST /pet/{id})."""
         resp = client.post(

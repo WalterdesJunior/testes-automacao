@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
 
@@ -28,17 +27,13 @@ class CheckoutPage(BasePage):
 
     def finish_purchase(self):
         # Espera o botão estar visível e clica
-        btn = WebDriverWait(self.driver, 15).until(
-            EC.element_to_be_clickable(self.BTN_FINISH)
-        )
+        btn = self.wait.until(EC.element_to_be_clickable(self.BTN_FINISH))
         self.driver.execute_script("arguments[0].scrollIntoView(true);", btn)
         btn.click()
 
     def get_confirmation_message(self):
         # Espera até 15s pela mensagem de confirmação
-        return WebDriverWait(self.driver, 15).until(
-            EC.visibility_of_element_located(self.COMPLETE_HEADER)
-        ).text
+        return self.wait.until(EC.visibility_of_element_located(self.COMPLETE_HEADER)).text
 
     def get_total(self):
         return self.get_text(self.SUMMARY_TOTAL)

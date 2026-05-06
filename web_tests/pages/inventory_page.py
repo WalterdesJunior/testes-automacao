@@ -39,5 +39,9 @@ class InventoryPage(BasePage):
         elements = self.driver.find_elements(*self.ITEM_PRICE)
         return [float(p.text.replace("$", "")) for p in elements]
 
+    def get_all_product_names(self):
+        elements = self.driver.find_elements(*self.ITEM_NAME)
+        return [el.text for el in elements]
+
     def click_item_by_index(self, index=0):
         self.driver.find_elements(*self.ITEM_NAME)[index].click()
