@@ -138,3 +138,12 @@ Os relatórios HTML são publicados como **Artifacts** no GitHub Actions após c
 - **Base Page:** herança elimina duplicação dos métodos `find`, `click` e `type`.
 - **Fixtures com teardown:** os testes de API criam e limpam seus próprios dados via fixtures do pytest.
 - **Factory functions:** `helpers.py` gera payloads dinâmicos para evitar colisão de dados entre testes.
+
+---
+📸 Prints do Funcionamento
+Testes de API
+<img width="1366" height="768" alt="Captura de tela de 2026-05-06 20-36-22" src="https://github.com/user-attachments/assets/4a8d08ee-5158-4473-8530-334cdf2a4b06" />
+Testes Web
+<img width="1366" height="768" alt="Captura de tela de 2026-05-06 20-38-49" src="https://github.com/user-attachments/assets/c597c4ed-b2d7-4c6d-bbad-166034507b59" />
+Pipeline — API Tests
+
