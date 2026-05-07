@@ -114,9 +114,10 @@ O relatório HTML é gerado automaticamente em `report.html` dentro de cada past
 | `test_login_com_senha_errada` | Valida mensagem de erro de autenticação |
 | `test_login_usuario_bloqueado` | Verifica mensagem de bloqueio do usuário |
 | `test_login_sem_credenciais` | Valida campos obrigatórios no login |
-| `test_fluxo_completo_compra` | Fluxo E2E: Login → Adicionar → Carrinho → Checkout → Sucesso |
-| `test_remover_produto_do_carrinho` | Valida remoção de itens e atualização do contador |
-| `test_ordenar_produtos_por_preco_menor_para_maior` | Valida ordenação por preço crescente |
+| `test_login_redireciona_para_produtos` | Valida redirecionamento após login |
+| `test_adicionar_produto_unico` | Valida adição de um item ao carrinho |
+| `test_esvaziar_carrinho` | Valida remoção de itens do carrinho |
+| `test_verificar_detalhes_do_produto` | Valida navegação para detalhes do produto |
 
 ---
 
@@ -147,4 +148,3 @@ Os relatórios HTML são publicados como **Artifacts** no GitHub Actions após c
 ## Testes Web
 <img width="1366" height="768" alt="Captura de tela de 2026-05-06 21-01-05" src="https://github.com/user-attachments/assets/f6eb6e8a-4f03-42b8-bd21-995deb1d3c0f" />
 Pipeline — API Tests
-

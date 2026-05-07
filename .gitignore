@@ -1,6 +1,15 @@
+# Python
 __pycache__/
-*.pyc
-.pytest_cache/
-report.html
-.env
+*.py[cod]
+*$py.class
 venv/
+ENV/
+
+# Relatórios de Testes
+report.html
+assets/
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
