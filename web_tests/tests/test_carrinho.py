@@ -12,6 +12,7 @@ class TestCarrinho:
         cart = CartPage(logged_in_driver)
         cart.remove_item()
         
-        # Aguarda até que o item desapareça do DOM para evitar flutuabilidade no pipeline
-        assert cart.wait.until(EC.invisibility_of_element_located(cart.CART_ITEMS))
+        # Aguarda até que a lista de itens no carrinho esteja vazia (tamanho 0).
+        # O uso de lambda com find_elements é mais resiliente em pipelines de CI.
+        assert cart.wait.until(lambda d: len(d.find_elements(*cart.CART_ITEMS)) == 0)
         assert cart.get_item_count() == 0
