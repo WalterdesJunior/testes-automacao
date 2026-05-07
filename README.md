@@ -147,4 +147,9 @@ Os relatórios HTML são publicados como **Artifacts** no GitHub Actions após c
 
 ## Testes Web
 <img width="1366" height="768" alt="Captura de tela de 2026-05-06 21-01-05" src="https://github.com/user-attachments/assets/f6eb6e8a-4f03-42b8-bd21-995deb1d3c0f" />
-Pipeline — API Tests
+
+## Pipeline — API Tests
+<img width="1366" height="768" alt="Captura de tela de 2026-05-06 21-24-50" src="https://github.com/user-attachments/assets/a3da6226-a5c2-4b53-a0dc-5d2cd9fbb45f" />
+
+## Pipeline - WEB Tests
+<img width="1366" height="768" alt="Captura de tela de 2026-05-06 21-25-38" src="https://github.com/user-attachments/assets/b3c8f35d-d65f-4cf8-8df5-d31dea8c34ab" />
